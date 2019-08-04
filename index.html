@@ -1,0 +1,329 @@
+<!Doctype HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Microprocessor 8085</title>
+	
+	<link href="design.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="buttonfunctions.js"></script>
+	<script type="text/javascript" src="multipurposefunctions.js"></script>  
+	<script type="text/javascript" src="thecaller.js"></script>  
+	<script type="text/javascript" src="datatransferinstructions.js"></script>  
+	<script type="text/javascript" src="arithmeticinstructions.js"></script>  
+	<script type="text/javascript" src="logicalinstructions.js"></script>  
+	<script type="text/javascript" src="loopinginstructions.js"></script>  
+
+
+
+</head>
+
+<body>
+	<header>
+		<h1 align = "center" font-size = 100%>Microprocessor 8085 Simulator</h1>
+	</header>
+	<hr>
+	<nav align = "center">
+		The one place complete 8085 simulator.
+	</nav>
+	<hr>
+	<div class = "row" >
+		<div class = "column left ">
+			<table id = "table1">
+				<tr >
+					<th>address</th>
+					<th>opcode</th>
+					<th>operand</th>
+				</tr>
+				<tr id = "1" >
+					<td id = "1c">0000 H</td>
+					<td><input type="text" id="1a" placeholder="MVI"></td>
+					<td><input type="text" id="1b" placeholder="R,08 H"></td>
+				</tr>
+				<tr id = "2" >
+					<td id ="2c">0001 H</td>
+					<td><input type="text" id="2a" ONCHANGE = "LOAD(1);" placeholder="MOV"></td>
+					<td><input type="text" id="2b" ONCHANGE = "LOAD(1);" placeholder="R,R"></td>
+				</tr>
+				<tr id = "3" >
+					<td id = "3c">0002 H</td>
+					<td><input type="text" id="3a" ONCHANGE = "LOAD(1);" placeholder="MVI"></td>
+					<td><input type="text" id="3b" ONCHANGE = "LOAD(1);" placeholder="M,06H"></td>
+				</tr>
+				<tr id = "4" >
+					<td id = "4c">0003 H</td>
+					<td><input type="text" id="4a" ONCHANGE = "LOAD(1);" placeholder="MOV"></td>
+					<td><input type="text" id="4b" ONCHANGE = "LOAD(1);" placeholder="R,M"></td>
+				</tr>
+				<tr id = "5" >
+					<td id = "5c">0004 H</td>
+					<td><input type="text" id="5a" ONCHANGE = "LOAD(1);" placeholder="HLT"></td>
+					<td><input type="text" id="5b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "6" >
+					<td id = "6c">0005 H</td>
+					<td><input type="text" id="6a" ONCHANGE = "LOAD(1);"></td>
+					<td><input type="text" id="6b" ONCHANGE = "LOAD(1);"> </td>
+				</tr>
+				<tr id = "7" >
+					<td id = "7c">0006 H</td>
+					<td><input type="text" id="7a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="7b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "8" >
+					<td id = "8c">0007 H</td>
+					<td><input type="text" id="8a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="8b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "9" >
+					<td id = "9c">0008 H</td>
+					<td><input type="text" id="9a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="9b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "10" >
+					<td id = "10c">0009 H</td>
+					<td><input type="text" id="10a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="10b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "11" >
+					<td id = "11c">000A H</td>
+					<td><input type="text" id="11a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="11b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "12" >
+					<td id = "12c">000B H</td>
+					<td><input type="text" id="12a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="12b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "13" >
+					<td id = "13c">000C H</td>
+					<td><input type="text" id="13a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="13b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "14" >
+					<td id = "14c">000D H</td>
+					<td><input type="text" id="14a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="14b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "15" >
+					<td id = "15c">000E H</td>
+					<td><input type="text" id="15a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="15b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "16" >
+					<td id = "16c">000F H</td>
+					<td><input type="text" id="16a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="16b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "17" >
+					<td id = "17c">0010 H</td>
+					<td><input type="text" id="17a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="17b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "18" >
+					<td id = "18c">0011 H</td>
+					<td><input type="text" id="18a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="18b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "19" >
+					<td id = "19c">0012 H</td>
+					<td><input type="text" id="19a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="19b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "20" >
+					<td id = "20c">0013 H</td>
+					<td><input type="text" id="20a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="20b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "21" >
+					<td id = "21c">0014 H</td>
+					<td><input type="text" id="21a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="21b" ONCHANGE = "LOAD(1);" ></td>
+				</tr>
+				<tr id = "22" >
+					<td id = "22c">0015 H</td>
+					<td><input type="text" id="22a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="22b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "23" >
+					<td id = "23c">0016 H</td>
+					<td><input type="text" id="23a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="23b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "24" >
+					<td id = "24c">0017 H</td>
+					<td><input type="text" id="24a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="24b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+				<tr id = "25" >
+					<td id = "25c">0018 H</td>
+					<td><input type="text" id="25a" ONCHANGE = "LOAD(1);" ></td>
+					<td><input type="text" id="25b" ONCHANGE = "LOAD(1);"></td>
+				</tr>
+
+			
+				
+			</table><br/>
+			<!--button type = "submita" onclick = "clearcontent()" id = "clearcontent" >Click to clear your assembly program</button--> 
+			<button type = "submit" onclick = "down()" id = "lines" >Go Down</button> 
+			<button type = "submit" onclick = "up()" id = "lines" >Go UP</button> 
+			<button type = "submit" onclick = "EDIT()" id="edit">EDIT</button> 
+			<button type = "submit" onclick = "LOAD(0)" id="load">LOAD</button> 
+			<button type = "submit" onclick = "stepinto()" id="step">STEP INTO</button> 
+	</div><!--column left ending-->
+	
+	<div class = "column middle" >
+		<table id = "table3" border = " 10px" align = "center" padding = "5px">
+			<tr>
+				<th>Register</th>
+				<th>Value in Registers</th>
+			</tr>
+
+
+			<tr>
+				<th>A</th>
+				<td id= "A" ></td>
+			</tr>
+			<tr>
+				<th>B</th>
+				<td id= "B"></td>
+			</tr>
+			<tr>
+				<th>C</th>
+				<td id= "C" ></td>
+			</tr>
+			<tr>
+				<th>D</th>
+				<td id= "D"></td>
+			</tr>
+			<tr>
+				<th>E</th>
+				<td id= "E"></td>
+			</tr>
+			<tr>
+				<th>H</th>
+				<td id= "H"></td>
+			</tr>
+			<tr>
+				<th>L</th>
+				<td id= "L"></td>
+			</tr>
+			<tr>
+				<th>SP</th>
+				<td id= "SP"></td>
+			</tr>
+		</table>
+		<br>
+		<table id = "tablePC" border = "10px" align = "center" >
+			<tr>
+				<th colspan = "2" ><center>Program Counter</center></th>
+			</tr>
+			<tr>
+				<th rowspan = "2">PC</th>
+				<td><input type="text" id="PC" placeholder= "0000 H"></td>
+			</tr>
+			<tr>
+				
+				<td><button type = "submit" onclick = "setpc()" id = "setthePC" >Set the Program Counter.</button></td>
+			</tr>
+		</table>
+		<br>
+
+		<table id = "table2" border = " 10px"  align = "center" >
+			<tr>
+				<th>Flags</th>
+				<th>Flag Status</th>
+			</tr>
+
+
+			<tr>
+				<th>S</th>
+				<td id= "S" ></td>
+			</tr>
+			<tr>
+				<th>Z</th>
+				<td id= "Z"></td>
+			</tr>
+			<tr>
+				<th>Ay</th>
+				<td id= "Ay" ></td>
+			</tr>
+			<tr>
+				<th>P</th>
+				<td id= "P"></td>
+			</tr>
+			<tr>
+				<th>Cy</th>
+				<td id= "Cy"></td>
+			</tr>
+		</table>
+		<br>
+
+		
+		
+		<table id = "memory" border = "10px" align = "center">
+			<tr>
+				<th colspan = 2><center>Memory</center></th>
+			</tr>
+			<tr>
+				<th>M</th>
+				<td id= "M"></td>
+			</tr>
+		</table>
+		<br>
+
+		
+	</div>
+	<!--column middle ending-->
+	<!--div class = "column right" >
+		<img src = "MVI.png" alt="Timing diagram of MVI" width = "100%"/-->
+		<!--p>We are trying hard.Timing diagram of your instruction shall be displayed here soon.</p>
+		<p>Available instructions</p>
+		<p>MVI</p>
+		<p>MOV</p>
+		<p>ADI</p>
+		<p>ADD</p>
+		<p>ADC</p>
+		<p>ACI</p>
+		<p>SUB</p>
+		<p>SUI</p>
+		<p>SBB</p>
+		<p>SBI</p>
+		<p>INR</p>
+		<p>DCR</p>
+		<p>ANA</p>
+		<p>ORA</p>
+		<p>XRA</p>
+		<p>ANI</p>
+		<p>ORI</p>
+		<p>XRI</p>
+		<p>RLC</p>
+		<p>RRC</p>
+		<p>RAL</p>
+		<p>RAR</p>
+		<p>CMA</p>
+		<p>CMC</p>
+		<p>STC</p>
+		<p>CMP</p>
+		<p>CPI</p>
+		<p>NOP</p>
+		<p>HLT</p>
+		
+
+	</div><!column right ending-->
+	<!--row ending-->
+	<!--hr-->
+	<!--footer align = "center">
+		Contact us if receiving any unexpected errors
+	</footer-->
+
+
+</body>
+
+			
+
+
+
+
+
+
+</html>
